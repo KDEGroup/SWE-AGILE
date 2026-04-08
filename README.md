@@ -10,7 +10,7 @@
 
 <font size=4><div align='center' > [[📖 Paper]()] [[🤗 Checkpoints](https://huggingface.co/KDEGroup/SWE-AGILE-RL-8B)] [[🤗 Data]()] [[🤗 Daily Paper]()] [[🚀 Github](https://github.com/KDEGroup/SWE-AGILE)]</div></font>
 
-\## 🔥 Overview
+## 🔥 Overview
 
 We propose SWE-AGILE, a novel software agent framework designed to bridge the gap between reasoning depth, efficiency, and context constraints. SWE-AGILE introduces a Dynamic Reasoning Context strategy, maintaining a “sliding window” of detailed reasoning for immediate continuity to prevent redundant re-analyzing, while compressing historical reasoning content into concise Reasoning Digests.
 

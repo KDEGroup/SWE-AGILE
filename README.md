@@ -20,11 +20,11 @@ While our current paradigm implicitly reduces redundant state reconstruction, **
 
   
 
-<img src="assets/overview.png" alt="Logo" >
+<img src="assets/overview.png">
 
 
 
-<img src="assets/swe-bench-verified.png" alt="Logo" >
+<img src="assets/swe-bench-verified.png">
 
 
 

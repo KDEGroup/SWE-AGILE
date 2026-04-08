@@ -113,7 +113,7 @@ if [ -d "$R2E_PATH" ]; then
     $UV_CMD pip install --python "$VENV_PYTHON" -e "$R2E_PATH" -c constraints.txt
 fi
 
-$UV_CMD pip install --python "$VENV_PYTHON" json5 wandb loguru jsonlines pandas
+$UV_CMD pip install --python "$VENV_PYTHON" json5 wandb loguru jsonlines pandas httpx[socks]
 
 echo "========================================"
 echo "🎉 Environment deployment completed!"

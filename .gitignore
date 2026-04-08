@@ -3,7 +3,6 @@
 venv/
 env/
 ENV/
-tools_uv_env/
 
 # Python cache
 __pycache__/
@@ -29,6 +28,7 @@ wheels/
 
 # Wandb logs
 wandb/
+**/wandb/
 
 # IDE
 .vscode/
@@ -41,9 +41,18 @@ wandb/
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs and experiment artifacts
 *.log
+*.out
+*.err
+*.pid
 logs/
+**/logs/
+outputs/
+**/outputs/
+**/run_logs/
+**/validate_logs/
+**/.hydra/
 
 # Temporary files
 tmp/
@@ -56,6 +65,3 @@ temp/
 # Data files
 *.parquet
 rllm/rllm/data/datasets/
-
-# Sitecustomize
-sitecustomize.py

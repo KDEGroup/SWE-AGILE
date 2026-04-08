@@ -16,7 +16,7 @@ We propose SWE-AGILE, a novel software agent framework designed to bridge the ga
 
 
 
-While our current paradigm implicitly reduces redundant state reconstruction, **a highly promising direction to strictly enforce this efficiency** is to quantitatively monitor the reasoning content. By \emph{calculating the embedding similarity between consecutive reasoning steps or employing an LLM-as-a-Judge}, future iterations can explicitly filter out repetitive SFT trajectories or design targeted RLVR penalties, pushing the boundary of cognitive efficiency even further.
+While our current paradigm implicitly reduces redundant state reconstruction, a highly promising direction to strictly enforce this efficiency is to quantitatively monitor the reasoning content. By \emph{calculating the embedding similarity between consecutive reasoning steps or employing an LLM-as-a-Judge}, future iterations can explicitly filter out repetitive SFT trajectories or design targeted RLVR penalties, pushing the boundary of cognitive efficiency even further.
 
   
 

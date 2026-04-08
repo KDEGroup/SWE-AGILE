@@ -1,0 +1,95 @@
+optim:
+  _target_: verl.workers.config.FSDPOptimizerConfig
+  optimizer: AdamW
+  optimizer_impl: torch.optim
+  lr: 1.0e-05
+  lr_warmup_steps_ratio: 0.1
+  total_training_steps: -1
+  weight_decay: 0.01
+  lr_warmup_steps: -1
+  betas:
+  - 0.9
+  - 0.95
+  clip_grad: 1.0
+  min_lr_ratio: 0.0
+  num_cycles: 0.5
+  lr_scheduler_type: constant
+  warmup_style: null
+  override_optimizer_config: null
+  lr_scheduler: cosine
+data:
+  train_batch_size: 128
+  micro_batch_size: null
+  micro_batch_size_per_gpu: 8
+  train_files: /mnt/69_store/lsq/SWE-bench-agent/storage/about1987swedev-1357smith-1000rft-ex.parquet
+  val_files: default
+  train_max_samples: -1
+  val_max_samples: -1
+  prompt_key: question
+  response_key: answer
+  prompt_dict_keys: null
+  response_dict_keys: null
+  multiturn:
+    enable: true
+    messages_key: messages
+    tools_key: tools
+    enable_thinking_key: enable_thinking
+  max_length: 27000
+  truncation: right
+  balance_dp_token: false
+  chat_template: null
+  custom_cls:
+    path: null
+    name: null
+  use_shm: false
+  apply_chat_template_kwargs: {}
+  rllm:
+    tokenize_and_mask_method: stepwise
+    reasoning_mode: all
+model:
+  partial_pretrain: /mnt/82_store/huggingface_cache/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218
+  use_shm: false
+  fsdp_config:
+    model_dtype: fp32
+    wrap_policy:
+      min_num_params: 0
+    cpu_offload: false
+    offload_params: false
+  external_lib: null
+  enable_gradient_checkpointing: true
+  trust_remote_code: true
+  lora_rank: 0
+  lora_alpha: 16
+  target_modules: all-linear
+  use_liger: false
+  strategy: fsdp2
+ulysses_sequence_parallel_size: 8
+use_remove_padding: true
+trainer:
+  default_local_dir: /mnt/69_store/lsq/SWE-bench-agent/storage/sft_outputs/sft_step_4k-8B-btsz128-lr1e-5-4ep
+  default_hdfs_dir: null
+  project_name: SWE-SFT
+  experiment_name: sft_step_4k-8B-btsz128-lr1e-5-4ep
+  total_epochs: 4
+  total_training_steps: null
+  logger:
+  - console
+  - wandb
+  seed: 1
+  save_freq: 513
+  test_freq: 513
+  nnodes: 1
+  n_gpus_per_node: 8
+  max_ckpt_to_keep: null
+  resume_mode: auto
+  resume_from_path: null
+  checkpoint:
+    save_contents:
+    - model
+    - optimizer
+    - extra
+    load_contents: ${trainer.checkpoint.save_contents}
+  device: cuda
+  log_episodes: false
+  episode_log_dir: logs/${trainer.project_name}/${trainer.experiment_name}
+model.fsdp_config.model_dtype: bf16

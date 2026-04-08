@@ -1,0 +1,11 @@
+{
+  "R2E_Gym_Subset": {
+    "train": "/mnt/69_store/lsq/tmp/SWE-AGILE/rllm/rllm/data/datasets/R2E_Gym_Subset/train.parquet"
+  },
+  "SWE_Bench_Lite": {
+    "test": "/mnt/69_store/lsq/tmp/SWE-AGILE/rllm/rllm/data/datasets/SWE_Bench_Lite/test.parquet"
+  },
+  "SWE_Bench_Verified": {
+    "test": "/mnt/69_store/lsq/tmp/SWE-AGILE/rllm/rllm/data/datasets/SWE_Bench_Verified/test.parquet"
+  }
+}

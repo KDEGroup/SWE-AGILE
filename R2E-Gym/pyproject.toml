@@ -1,0 +1,47 @@
+[project]
+name = "r2e-gym"
+version = "0.1.0"
+authors = [
+    {name = "Naman Jain", email = "naman1205jain@gmail.com"},
+    {name = "Jaskirat Singh", email = "jaskirat.singh@anu.edu.au"},
+]
+dependencies = [
+    "pandas",
+    "tqdm",
+    "asttokens",
+    "pydantic",
+    "matplotlib",
+    "datasets",
+    "ipython",
+    "pygments",
+    "flask",
+    "gym",
+    "fire",
+    "diff-parser",
+    "scikit-learn",
+    "rich",
+    "simple-parsing",
+    "together",
+    "markdown",
+    "transformers",
+    "pexpect",
+    "libtmux",
+    "bashlex",
+    "anthropic[vertex]",
+    "litellm",
+    "google-cloud-aiplatform",
+    "swebench==3.0.2",
+    "apscheduler",
+    "sb-cli",
+    "seaborn",
+    "kubernetes",
+    "gpustat",
+    "orjson",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]

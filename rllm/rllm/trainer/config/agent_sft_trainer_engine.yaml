@@ -1,0 +1,66 @@
+# Agent SFT Trainer with Engine backend
+# Supports use_dynamic_bsz and ulysses_sequence_parallel_size
+
+hydra:
+  searchpath:
+    - pkg://verl.trainer.config
+
+defaults:
+  - sft_trainer_engine
+  - _self_
+
+# Model configuration
+model:
+  path: ~/models/Qwen3-8B
+  trust_remote_code: true
+  enable_gradient_checkpointing: true
+  use_remove_padding: true
+
+# Engine configuration - ulysses_sequence_parallel_size is set here
+engine:
+  ulysses_sequence_parallel_size: 1
+  model_dtype: bf16
+  dtype: bfloat16
+  strategy: fsdp
+
+# Data configuration
+data:
+  train_batch_size: 128
+  micro_batch_size_per_gpu: 8
+  max_token_len_per_gpu: 8192
+  use_dynamic_bsz: true
+  pad_mode: no_padding
+  max_length: 27000
+  truncation: right
+  train_files: null
+  val_files: null
+  # Custom dataset class for RLLM
+  custom_cls:
+    path: rllm/rllm/trainer/verl/sft_dataset.py
+    name: RLLMSFTDataset
+  # RLLM-specific settings
+  rllm:
+    tokenize_and_mask_method: cumulative
+    reasoning_mode: all
+    last_n_reasoning: 0
+    expand_trajectory_to_steps: false
+
+# Trainer configuration
+trainer:
+  default_local_dir: checkpoints/${trainer.project_name}/${trainer.experiment_name}
+  project_name: SWE-SFT
+  experiment_name: test
+  total_epochs: 4
+  logger: ['console', 'wandb']
+  seed: 1
+  save_freq: -1
+  test_freq: -1
+  device: cuda
+  nnodes: 1
+  n_gpus_per_node: 8
+  profile_interval: [-1, -1]
+
+# Optimizer configuration
+optim:
+  lr: 1e-5
+  lr_warmup_steps_ratio: 0.1

@@ -8,7 +8,7 @@
 
 
 
-<font size=4><div align='center' > [[📖 Paper](https://arxiv.org/abs/2604.11716)] [[🤗 Checkpoints](https://huggingface.co/KDEGroup)] [[🤗 Daily Paper]()] [[🚀 Github](https://github.com/KDEGroup/SWE-AGILE)]</div></font>
+<font size=4><div align='center' > [[📖 Paper](https://arxiv.org/abs/2604.11716)] [[🤗 Checkpoints](https://huggingface.co/KDEGroup)] [[🤗 Daily Paper](https://huggingface.co/papers/2604.11716)] [[🚀 Github](https://github.com/KDEGroup/SWE-AGILE)]</div></font>
 
 ## 🔥 Overview
 
@@ -16,7 +16,7 @@ We propose SWE-AGILE, a novel software agent framework designed to bridge the ga
 
 
 
-While our current paradigm implicitly reduces redundant state reconstruction, a highly promising direction to strictly enforce this efficiency is to quantitatively monitor the reasoning content. By \emph{calculating the embedding similarity between consecutive reasoning steps or employing an LLM-as-a-Judge}, future iterations can explicitly filter out repetitive SFT trajectories or design targeted RLVR penalties, pushing the boundary of cognitive efficiency even further.
+While our current paradigm implicitly reduces redundant state reconstruction, a highly promising direction to strictly enforce this efficiency is to quantitatively monitor the reasoning content. By calculating the embedding similarity between consecutive reasoning steps or employing an LLM-as-a-Judge, future iterations can explicitly filter out repetitive SFT trajectories or design targeted RLVR penalties, pushing the boundary of cognitive efficiency even further.
 
   
 

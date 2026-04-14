@@ -8,7 +8,7 @@
 
 
 
-<font size=4><div align='center' > [[📖 Paper]()] [[🤗 Checkpoints](https://huggingface.co/KDEGroup)] [[🤗 Daily Paper]()] [[🚀 Github](https://github.com/KDEGroup/SWE-AGILE)]</div></font>
+<font size=4><div align='center' > [[📖 Paper](https://arxiv.org/abs/2604.11716)] [[🤗 Checkpoints](https://huggingface.co/KDEGroup)] [[🤗 Daily Paper]()] [[🚀 Github](https://github.com/KDEGroup/SWE-AGILE)]</div></font>
 
 ## 🔥 Overview
 

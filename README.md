@@ -12,7 +12,9 @@
 
 ## 🔥 Overview
 
-We propose SWE-AGILE, a novel software agent framework designed to bridge the gap between reasoning depth, efficiency, and context constraints. SWE-AGILE introduces a Dynamic Reasoning Context strategy, maintaining a “sliding window” of detailed reasoning for immediate continuity to prevent redundant re-analyzing, while compressing historical reasoning content into concise Reasoning Digests.
+Prior approaches typically lack the **explicit System-2 reasoning** required for deep analysis. While recent reasoning models demonstrate the potential of extended Chain-of-Thought (CoT), applying them to multi-turn tasks creates a dilemma: retaining full history leads to **context explosion**, while discarding it causes **redundant re-reasoning**.
+
+We propose SWE-AGILE, a novel software agent framework designed to bridge the gap between reasoning depth, efficiency, and context constraints. SWE-AGILE introduces a Dynamic Reasoning Context strategy, maintaining a “sliding window” of detailed reasoning for immediate continuity to prevent redundant re-analyzing, while compressing historical reasoning content into concise Reasoning Digests via **Backfilling Data Synthesis**, **Trajectory Snapshot Training** and **Compression-Aware Optimization**.
 
 
 
